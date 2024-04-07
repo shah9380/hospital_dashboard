@@ -11,7 +11,7 @@ const AddNewAdmin = () => {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [nic, setNic] = useState("");
+  const [aadharNumber, setAadharNumber] = useState("");
   const [dob, setDob] = useState("");
   const [gender, setGender] = useState("");
   const [password, setPassword] = useState("");
@@ -24,7 +24,7 @@ const AddNewAdmin = () => {
       await axios
         .post(
           "https://hotel-management-mern-1.onrender.com/api/v1/user/admin/addnew",
-          { firstName, lastName, email, phone, nic, dob, gender, password },
+          { firstName, lastName, email, phone, aadharNumber, dob, gender, password },
           {
             withCredentials: true,
             headers: { "Content-Type": "application/json" },
@@ -38,7 +38,7 @@ const AddNewAdmin = () => {
           setLastName("");
           setEmail("");
           setPhone("");
-          setNic("");
+          setAadharNumber("");
           setDob("");
           setGender("");
           setPassword("");
@@ -89,9 +89,9 @@ const AddNewAdmin = () => {
           <div>
             <input
               type="number"
-              placeholder="NIC"
-              value={nic}
-              onChange={(e) => setNic(e.target.value)}
+              placeholder="Aadhar"
+              value={aadharNumber}
+              onChange={(e) => setAadharNumber(e.target.value)}
             />
             <input
               type={"date"}
